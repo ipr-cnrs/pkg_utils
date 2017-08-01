@@ -6,3 +6,51 @@ pkg_utils_new_state: 'installed'
 
 pkg_utils_old_state: 'absent'
 pkg_utils_old_manage: true
+
+# configuration
+pkg_utils_updatedb_conf_path: '/etc/updatedb.conf'
+pkg_utils_updatedb_conf_tpl: 'etc/updatedb.conf.j2'
+pkg_utils_updatedb_prune_bind_mounts: true
+pkg_utils_updatedb_prunenames:
+  - .bzr
+  - .git
+  - .hg
+  - .svn
+pkg_utils_updatedb_prunepaths:
+  - /media
+  - /mnt
+  - /tmp
+  - /var/lib/ceph
+  - /var/spool
+pkg_utils_updatedb_prunefs:
+  - afs
+  - autofs
+  - binfmt_misc
+  - ceph
+  - cifs
+  - coda
+  - curlftpfs
+  - devfs
+  - devpts
+  - devtmpfs
+  - ecryptfs
+  - fuse.glusterfs
+  - fuse.sshfs
+  - fusesmb
+  - iso9660
+  - lustre
+  - lustre_lite
+  - mfs
+  - ncpfs
+  - NFS
+  - nfs
+  - nfs4
+  - proc
+  - rpc_pipefs
+  - shfs
+  - smbfs
+  - sysfs
+  - ftpfs
+  - tmpfs
+  - udf
+  - usbfs

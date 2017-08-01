@@ -25,3 +25,15 @@
   when: pkg_utils_old_manage
 
 # }}}
+
+  # configuration {{{
+- name: CONFIG updatedb
+  template:
+    src: '{{ pkg_utils_updatedb_conf_tpl }}'
+    dest: '{{ pkg_utils_updatedb_conf_path }}'
+    owner: root
+    group: root
+    mode: 0644
+    backup: true
+
+# }}}

@@ -5,19 +5,29 @@
      * [OS Specific Variables](#os-specific-variables)
 3. [Example Playbook](#example-playbook)
 4. [Packages](#packages)
-5. [Development](#development)
-5. [License](#license)
-6. [Author Information](#author-information)
+    * [New Packages](#new-packages)
+    * [Unwanted Packages](#unwanted-packages)
+5. [Configuration](#configuration)
+    * [Updatedb](#updatedb)
+6. [Development](#development)
+7. [License](#license)
+8. [Author Information](#author-information)
 
 ## Overview
 
-Manage some packages from 'utils' section (Apt).
+Manage some packages installation and configuration from 'utils' section (Apt).
 
 ## Role Variables
 
 * **pkg_utils_new_state** : State of new pkg_utils packages [default : `installed`].
 * **pkg_utils_old_state** : State of useless pkg_utils [default : `absent`].
 * **pkg_utils_old_manage** : If this role should manage unwanted packages [default : `true`].
+* **pkg_utils_updatedb_conf_path** : Configuration file for **updatedb** [default : `/etc/updatedb.conf`].
+* **pkg_utils_updatedb_conf_tpl** : Template used to generate the previous config file [default : `etc/updatedb.conf.j2`].
+* **pkg_utils_updatedb_prune_bind_mounts** : Whether or not bind mounts are scanned [default: `true`].
+* **pkg_utils_updatedb_prunenames** : A list of directory names (without paths) which should not be scanned [default: `[.bzr, .git, .hg, .svn]`].
+* **pkg_utils_updatedb_prunepaths** : A list of path names of directories which should not be scanned [default: `[/media, /mnt, /tmp, /var/lib/ceph, /var/spool]`].
+* **pkg_utils_updatedb_prunefs** : A list of file system types (as used in /etc/mtab) which should not be scanned [default: `[afs, autofs, binfmt_misc, ceph, cifs, coda, curlftpfs, devfs, devpts, devtmpfs, ecryptfs, fuse.glusterfs, fuse.sshfs, fusesmb, iso9660, lustre, lustre_lite, mfs, ncpfs, NFS, nfs, nfs4, proc, rpc_pipefs, shfs, smbfs, sysfs, ftpfs, tmpfs, udf, usbfs]`].
 
 ### OS Specific Variables
 
@@ -83,6 +93,15 @@ sudo multitail -s 2 /var/log/auth.log /var/log/syslog /var/log/mail.log
 
 ### Unwanted Packages
 * **vim-tiny** : Compact version of vim editor.
+
+## Configuration
+
+### Updatedb
+
+Based on the [Oefenweb module][oefenweb ansible updatedb], thanks !
+
+* Set the default configuration file for *updatedb*.
+* Ensure to not scan some path, directories and filesystem.
 
 ## Development
 

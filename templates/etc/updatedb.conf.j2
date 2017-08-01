@@ -1,0 +1,6 @@
+# {{ ansible_managed }}
+
+PRUNE_BIND_MOUNTS="{{ 'yes' if pkg_utils_updatedb_prune_bind_mounts else 'no' }}"
+PRUNENAMES="{{ pkg_utils_updatedb_prunenames | join(' ') }}"
+PRUNEPATHS="{{ pkg_utils_updatedb_prunepaths | join(' ') }}"
+PRUNEFS="{{ pkg_utils_updatedb_prunefs | join(' ') }}"

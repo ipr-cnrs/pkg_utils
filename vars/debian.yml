@@ -22,3 +22,6 @@ pkg_utils_new_list:
   - 'vim-scripts'
   - 'zip'
   - 'zsh'
+
+pkg_utils_old_list:
+  - 'vim-tiny'

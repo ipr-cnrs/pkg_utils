@@ -16,4 +16,12 @@
   with_items:
     - '{{ pkg_utils_new_list }}'
 
+- name: Remove useless packages
+  apt:
+    name: '{{ item }}'
+    state: '{{ pkg_utils_old_state }}'
+  with_items:
+    - '{{ pkg_utils_old_list }}'
+  when: pkg_utils_old_manage
+
 # }}}

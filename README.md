@@ -15,13 +15,16 @@ Manage some packages from 'utils' section (Apt).
 
 ## Role Variables
 
-* **pkg_utils_new_state** : State of new pkg_utils packages [default : `latest`].
+* **pkg_utils_new_state** : State of new pkg_utils packages [default : `installed`].
+* **pkg_utils_old_state** : State of useless pkg_utils [default : `absent`].
+* **pkg_utils_old_manage** : If this role should manage unwanted packages [default : `true`].
 
 ### OS Specific Variables
 
 Please see default value by Operating System file in [vars][vars directory] directory.
 
 * **pkg_utils_new_list** : The list of packages to install to provide `pkg_utils`.
+* **pkg_utils_old_list** : The list of unwanted packages to remove.
 
 ## Example Playbook
 
@@ -31,6 +34,15 @@ Please see default value by Operating System file in [vars][vars directory] dire
 - hosts: serverXYZ
   roles:
     - role: ipr-cnrs.pkg_utils
+```
+
+* Don't remove any packages :
+
+``` yml
+- hosts: serverXYZ
+  roles:
+    - role: ipr-cnrs.pkg_utils
+      pkg_utils_old_manage: false
 ```
 
 ## Packages
@@ -68,6 +80,9 @@ sudo multitail -s 2 /var/log/auth.log /var/log/syslog /var/log/mail.log
 * **vim-scripts** : Plugins for vim, adding bells and whistles.
 * **zip** : Archiver for .zip files.
 * **zsh** : Shell with lots of features.
+
+### Unwanted Packages
+* **vim-tiny** : Compact version of vim editor.
 
 ## Development
 

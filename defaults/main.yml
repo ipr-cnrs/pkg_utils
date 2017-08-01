@@ -4,3 +4,5 @@
 # packages
 pkg_utils_new_state: 'installed'
 
+pkg_utils_old_state: 'absent'
+pkg_utils_old_manage: true

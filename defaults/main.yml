@@ -4,10 +4,15 @@
 # packages
 pkg_utils_new_state: 'installed'
 
-pkg_utils_old_state: 'absent'
 pkg_utils_old_manage: true
+pkg_utils_old_state: 'absent'
 
 # configuration
+
+pkg_utils_default_editor_manage: true
+pkg_utils_default_editor_name: 'vim.nox'
+pkg_utils_default_editor_path: '/usr/bin/vim.nox'
+
 pkg_utils_updatedb_conf_path: '/etc/updatedb.conf'
 pkg_utils_updatedb_conf_tpl: 'etc/updatedb.conf.j2'
 pkg_utils_updatedb_prune_bind_mounts: true

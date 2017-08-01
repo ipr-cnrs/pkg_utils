@@ -27,6 +27,13 @@
 # }}}
 
   # configuration {{{
+- name: CONFIG {{ pkg_utils_default_editor_name }} as default editor
+  alternatives:
+    name: editor
+    path: '{{ pkg_utils_default_editor_path }}'
+    priority: 80
+  when: pkg_utils_default_editor_manage
+
 - name: CONFIG updatedb
   template:
     src: '{{ pkg_utils_updatedb_conf_tpl }}'

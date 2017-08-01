@@ -1,0 +1,19 @@
+---
+# tasks file for pkg_utils
+
+- name: Load specific OS vars
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution|lower }}-{{ ansible_distribution_version }}.yml"
+    - "{{ ansible_distribution|lower }}.yml"
+    - "{{ ansible_os_family|lower }}.yml"
+
+# packages {{{
+- name: Ensure useful packages
+  apt:
+    name: '{{ item }}'
+    state: '{{ pkg_utils_new_state }}'
+  with_items:
+    - '{{ pkg_utils_new_list }}'
+
+# }}}

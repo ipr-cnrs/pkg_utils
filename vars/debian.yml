@@ -1,0 +1,24 @@
+---
+
+# vars file for Debian-based distros
+
+pkg_utils_new_list:
+  - 'bsdmainutils'
+  - 'colordiff'
+  - 'cpio'
+  - 'debian-goodies'
+  - 'htop'
+  - 'lsof'
+  - 'lzip'
+  - 'mlocate'
+  - 'moreutils'
+  - 'multitail'
+  - 'tmux'
+  - 'tree'
+  - 'unrar'
+  - 'unzip'
+  - 'vim-nox'
+  - 'vim-doc'
+  - 'vim-scripts'
+  - 'zip'
+  - 'zsh'

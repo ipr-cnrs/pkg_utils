@@ -100,7 +100,7 @@ sudo multitail -s 2 /var/log/auth.log /var/log/syslog /var/log/mail.log
 
 Based on the [Oefenweb module][oefenweb ansible updatedb], thanks !
 
-* Set the default configuration file for *updatedb*.
+* Set the default configuration file for *updatedb* and update the database for Mlocate with an handler.
 * Ensure to not scan some path, directories and filesystem.
 
 ## Development

@@ -35,5 +35,6 @@
     group: root
     mode: 0644
     backup: true
+  notify: update mlocate db
 
 # }}}

@@ -3,6 +3,7 @@
 # vars file for Debian-based distros
 
 pkg_utils_new_list:
+  - 'apt-transport-https'
   - 'bsdmainutils'
   - 'colordiff'
   - 'cpio'

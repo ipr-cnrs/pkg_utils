@@ -62,6 +62,7 @@ Please see default value by Operating System file in [vars][vars directory] dire
 ## Packages
 
 ### New Packages
+* **apt-transport-https** : https download transport for APT.
 * **bdsmainutils** : Collection of more utilities from FreeBSD.
 * **colordiff** : Tool to colorize 'diff' output.
 * **cpio** : GNU cpio; a program to manage archives of files.

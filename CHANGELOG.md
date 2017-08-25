@@ -1,5 +1,9 @@
 
-## v1.X
+## v1.1.X
+
+* Add 'apt-transport-https' package.
+
+## v1.1
 
 ### Features
 * Configure and update mlocate/updatedb.

@@ -1,7 +1,9 @@
 
 ## v1.1.X
 
-* Add 'apt-transport-https' package.
+### Features
+* Add `apt-transport-https` package.
+* Ensure to install `less` package on Debian.
 
 ## v1.1
 

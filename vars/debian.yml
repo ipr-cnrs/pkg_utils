@@ -9,6 +9,7 @@ pkg_utils_new_list:
   - 'cpio'
   - 'debian-goodies'
   - 'htop'
+  - 'less'
   - 'lsof'
   - 'lzip'
   - 'mlocate'

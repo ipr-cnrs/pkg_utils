@@ -1,5 +1,5 @@
 
-## v1.1.X
+## v1.1.1
 
 ### Features
 * Add `apt-transport-https` package.

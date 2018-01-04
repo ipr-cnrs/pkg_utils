@@ -1,4 +1,9 @@
 
+## v1.1.2
+
+### Enhancements
+* Remove Debian installer log files after 4 weeks.
+
 ## v1.1.1
 
 ### Features

@@ -26,7 +26,7 @@
 
 # }}}
 
-  # configuration {{{
+# configuration {{{
 - name: CONFIG {{ pkg_utils_default_editor_name }} as default editor
   alternatives:
     name: editor
@@ -43,5 +43,25 @@
     mode: 0644
     backup: true
   notify: update mlocate db
+
+# }}}
+
+# purge log {{{
+
+- name: Find /var/log/installer
+  find:
+    path: /var/log/
+    patterns: 'installer'
+    age: '{{ pkg_utils_purge_installer_age }}'
+  register: findresult
+  when: pkg_utils_purge_installer_log
+
+- name: Remove /var/log/installer older than {{ pkg_utils_purge_installer_age }}
+  file:
+    path: "{{ item.path }}"
+    state: absent
+    recurse: yes
+  with_items: '{{ findresult.files }}'
+  when: pkg_utils_purge_installer_log
 
 # }}}

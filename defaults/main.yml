@@ -59,3 +59,7 @@ pkg_utils_updatedb_prunefs:
   - tmpfs
   - udf
   - usbfs
+
+pkg_utils_purge_installer_log: true
+pkg_utils_purge_installer_age: '4w'
+

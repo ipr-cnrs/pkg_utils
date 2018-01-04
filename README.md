@@ -32,6 +32,8 @@ Manage some packages installation and configuration from 'utils' section (Apt).
 * **pkg_utils_updatedb_prunenames** : A list of directory names (without paths) which should not be scanned [default: `[.bzr, .git, .hg, .svn]`].
 * **pkg_utils_updatedb_prunepaths** : A list of path names of directories which should not be scanned [default: `[/media, /mnt, /tmp, /var/lib/ceph, /var/spool]`].
 * **pkg_utils_updatedb_prunefs** : A list of file system types (as used in /etc/mtab) which should not be scanned [default: `[afs, autofs, binfmt_misc, ceph, cifs, coda, curlftpfs, devfs, devpts, devtmpfs, ecryptfs, fuse.glusterfs, fuse.sshfs, fusesmb, iso9660, lustre, lustre_lite, mfs, ncpfs, NFS, nfs, nfs4, proc, rpc_pipefs, shfs, smbfs, sysfs, ftpfs, tmpfs, udf, usbfs]`].
+* **pkg_utils_purge_installer_log** : If the installer log files should be removed [default : `true`].
+* **pkg_utils_purge_installer_age** : Maximum age of the installer log files before removing [default : `4w`].
 
 ### OS Specific Variables
 
@@ -57,6 +59,15 @@ Please see default value by Operating System file in [vars][vars directory] dire
   roles:
     - role: ipr-cnrs.pkg_utils
       pkg_utils_old_manage: false
+```
+
+* Don't remove installer log files :
+
+``` yml
+- hosts: serverXYZ
+  roles:
+    - role: ipr-cnrs.pkg_utils
+      pkg_utils_purge_installer_log: false
 ```
 
 ## Packages
@@ -111,6 +122,12 @@ Based on the [Oefenweb module][oefenweb ansible updatedb], thanks !
 
 * Set the default configuration file for *updatedb* and update the database for Mlocate with an handler.
 * Ensure to not scan some path, directories and filesystem.
+
+### Installer log files
+
+* Debian installer log all the installation in `/var/log/installer`.
+* If a system is stable, you should removed these log files.
+* After 4 weeks (by default) this role will remove it.
 
 ## Development
 

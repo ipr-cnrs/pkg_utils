@@ -1,3 +1,4 @@
+DEPRECATED, see README.md
 
 ## v1.1.2
 

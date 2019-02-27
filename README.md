@@ -1,5 +1,8 @@
 # PKG_UTILS
 
+Deprecated in favor of Debops roles [apt_install][debops apt_install role] and
+[resources][debops resources role].
+
 1. [Overview](#overview)
 2. [Role Variables](#role-variables)
      * [OS Specific Variables](#os-specific-variables)
@@ -153,3 +156,5 @@ Jérémy Gardais
 [pkg_utils github]: https://github.com/ipr-cnrs/pkg_utils
 [wtfpl website]: http://www.wtfpl.net/about/
 [ipr website]: https://ipr.univ-rennes1.fr/
+[debops apt_install role]: https://docs.debops.org/en/master/ansible/roles/debops.apt_install/index.html
+[debops resources role]: https://docs.debops.org/en/master/ansible/roles/debops.resources/index.html

@@ -1,7 +1,4 @@
-# PKG_UTILS
-
-Deprecated in favor of Debops roles [apt_install][debops apt_install role] and
-[resources][debops resources role].
+# NO LONGER SUPPORTED, please take a look to [apt_install][debops apt_install role] [resources][debops resources role] roles !
 
 1. [Overview](#overview)
 2. [Role Variables](#role-variables)
